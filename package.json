@@ -1,0 +1,15 @@
+{
+  "name": "realtime-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mauriciomutte/realtime-chat.git",
+  "author": "Mauricio Mutte <litiobr@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.16.4"
+  }
+}
