@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import UsersOnline from '../components/UsersOnline'
-import Send from '../components/Send'
+import Input from '../components/Input';
+import Button from '../components/Button';
 import Message from '../components/Message';
 import GlobalStyled from '../globalStyled';
-import { Chat } from '../components/styled';
+import { Chat, Send } from '../components/styled';
 import * as S from './styled'
 
 export default class Main extends Component {
@@ -18,7 +19,10 @@ export default class Main extends Component {
           <Message user="Pitoco" me={false} txt="Au au au!"/>
           <Message user="Maurício" me={true} txt="Olá pessoal! Como vocês estão?"/>
         </Chat>
-        <Send />
+        <Send>
+          <Input />
+          <Button />
+        </Send>
       </S.Main>
     );
   }
