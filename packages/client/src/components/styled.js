@@ -53,6 +53,13 @@ export const Text = styled.span`
   font-weight: lighter;
 `;
 
+export const Send = styled.div`
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  margin: 10px 0 4em;
+`;
+
 export const Input = styled.input`
   border: none;
   border-radius: 30px;
