@@ -1,9 +1,4 @@
 import React from 'react';
+import Main from './main';
 
-function App() {
-  return (
-    <h1>Realtime-chat client</h1>
-  );
-}
-
-export default App;
+export default () => <Main/>
