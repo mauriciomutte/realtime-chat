@@ -1,20 +1,11 @@
 import styled from 'styled-components';
 
-export const User = styled.div`
-  font-size: 14px;
-  margin: 0 20px;
-`;
-
-export const UserImg = styled.img`
-  border-radius: 50%;
-  height: auto;
-  max-width: 65px;
-`;
-
 export const UsersOnline = styled.div`
-  display: flex;
-  margin: 1em 0;
-  overflow: auto;
+  background-color: #4286F5;
+  color: #fff;
+  padding: 1em 0;
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
 `;
 
@@ -23,8 +14,10 @@ export const Chat = styled.div`
   display: flex;
   flex-direction: column-reverse;
   flex: 1;
-  padding: 10px;
+  margin: 0 auto;
+  max-width: 700px;
   overflow: auto;
+  width: 100%;
 `;
 
 export const Message = styled.div`
@@ -37,7 +30,7 @@ export const MessageBlock = styled.div`
   border-radius: ${props => props.me ? '20px 20px 0 20px' : '20px 20px 20px 0'};
   color: ${props => props.me ? '#282F37' : '#FFF'};
   display: table;
-  margin: 5px 0;
+  margin: 5px 10px;
   max-width: 55%;
   padding: 10px 15px;
 `;
@@ -58,6 +51,7 @@ export const Send = styled.div`
   height: 40px;
   justify-content: center;
   margin: 10px 0 4em;
+  padding: 0 10px;
 `;
 
 export const Input = styled.input`

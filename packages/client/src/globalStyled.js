@@ -11,8 +11,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Roboto', monospace;
     background-color: #EBEFF2;
-    margin: 0 auto;
-    max-width: 700px;
   }
 `;
 
