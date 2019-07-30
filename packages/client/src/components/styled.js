@@ -18,6 +18,15 @@ export const UsersOnline = styled.div`
   text-align: center;
 `;
 
+export const Chat = styled.div`
+  align-content: flex-end;
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+`;
+
 export const Message = styled.div`
   display: flex;
   justify-content: ${props => props.me ? 'flex-end' : 'flex-start'};
