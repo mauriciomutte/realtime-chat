@@ -3,5 +3,5 @@ import { UsersOnline } from './styled';
 
 export default (props) => 
   <UsersOnline>
-    3 Users online
+    {props.users} Users online
   </UsersOnline>
