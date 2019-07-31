@@ -9,6 +9,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "start": "yarn start:web & yarn start:server",
+    "start:web": "yarn workspace client start",
+    "start:server": "yarn workspace server start"
+  },
   "devDependencies": {
     "lerna": "^3.16.4"
   }
