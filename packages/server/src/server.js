@@ -9,6 +9,11 @@ io.on('connection', client => {
     io.sockets.emit('messages', messages);
   });
 
+  client.on('users', users => {
+    console.log(users)
+    io.sockets.emit('users', users);
+  });
+
   client.on('disconnect', () => {
     console.log('User diconnected');
 
