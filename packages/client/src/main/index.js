@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UsersOnline from '../components/UsersOnline'
-import Input from '../components/Input';
-import Button from '../components/Button';
+import SendInput from '../components/SendInput';
+import SendButton from '../components/SendButton';
 import Message from '../components/Message';
 import GlobalStyled from '../globalStyled';
 import { Chat, Send } from '../components/styled';
@@ -20,8 +20,8 @@ export default class Main extends Component {
           <Message user="Maurício" me={true} txt="Olá pessoal! Como vocês estão?"/>
         </Chat>
         <Send>
-          <Input />
-          <Button />
+          <SendInput value={value} handleChange={this.handleChangeSend} onKeyPress={this.keyPressedSend}/>
+          <SendButton click={this.sendMsg} />
         </Send>
       </S.Main>
     );
