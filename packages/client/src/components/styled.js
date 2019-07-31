@@ -54,7 +54,7 @@ export const Send = styled.div`
   padding: 0 10px;
 `;
 
-export const Input = styled.input`
+export const SendInput = styled.input`
   border: none;
   border-radius: 30px;
   box-shadow: 1px 2px 1px #0003;
@@ -63,7 +63,7 @@ export const Input = styled.input`
   max-width: 600px;
 `;
 
-export const Button = styled.button`
+export const SendButton = styled.button`
   align-items: center;
   border: none;
   border-radius: 100%;
