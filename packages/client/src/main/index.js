@@ -85,7 +85,7 @@ export default class Main extends Component {
             <Button onClick={this.getUsername}>Join</Button>
           </Box>
         </EnterUsername>
-        <UsersOnline />
+        <UsersOnline users={usersOnline}/>
         <Chat>
           <Message user="Maurício" me={true} txt="Que bom, fico feliz em ver vocês bem!"/>
           <Message user="Maithê" me={false} txt="Olá, Maurício! Tudo bem e com você?"/>
