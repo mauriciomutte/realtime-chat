@@ -75,6 +75,8 @@ export default class Main extends Component {
   }
   
   render() {
+    const {usersOnline, username, hasUsername, value, messages} = this.state;
+    
     return (
       <S.Main>
         <GlobalStyled />
