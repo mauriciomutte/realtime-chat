@@ -15,6 +15,9 @@ import {
   Button 
 } from '../components/styled';
 
+import socketIOClient from 'socket.io-client';
+const socket = socketIOClient('http://localhost:4000');
+
 const initialState = {
   usersOnline: 0,
   users: [],
@@ -29,6 +32,10 @@ export default class Main extends Component {
 
   constructor(props) {
     super(props);
+
+    socket.on('messages', messages => this.setState({ messages }));
+    socket.on('usersOnline', usersOnline => this.setState({ usersOnline }));
+    socket.on('users', users => this.setState({ users }));
 
     this.sendMsg = this.sendMsg.bind(this);
     this.handleChangeSend = this.handleChangeSend.bind(this);
@@ -76,7 +83,7 @@ export default class Main extends Component {
   
   render() {
     const {usersOnline, username, hasUsername, value, messages} = this.state;
-    
+
     return (
       <S.Main>
         <GlobalStyled />
