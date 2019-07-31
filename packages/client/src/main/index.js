@@ -26,6 +26,53 @@ const initialState = {
 
 export default class Main extends Component {
   state = { ...initialState };
+
+  constructor(props) {
+    super(props);
+
+    this.sendMsg = this.sendMsg.bind(this);
+    this.handleChangeSend = this.handleChangeSend.bind(this);
+    this.handleChangeUser = this.handleChangeUser.bind(this);
+    this.keyPressedSend = this.keyPressedSend.bind(this);
+    this.keyPressedUser = this.keyPressedUser.bind(this);
+    this.getUsername = this.getUsername.bind(this);
+  }
+
+  handleChangeSend(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleChangeUser(event) {
+    this.setState({username: event.target.value});
+  }
+
+  keyPressedSend(event) { 
+    if (event.key === "Enter") { this.sendMsg(); }
+  }
+
+  keyPressedUser(event) { 
+    if (event.key === "Enter") { this.getUsername(); }
+  }
+
+  getUsername() {
+    this.state.users.unshift({
+      username: this.state.username
+    });
+
+    socket.emit('users', this.state.users);
+    this.setState({hasUsername: true}); 
+  }
+
+  sendMsg() {
+    this.state.messages.unshift({
+      username: this.state.username,
+      txt: this.state.value,
+    });
+
+    socket.emit('messages', this.state.messages);
+
+    this.setState({value: ''});
+  }
   
   render() {
     return (
