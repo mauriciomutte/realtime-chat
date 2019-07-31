@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import UsersOnline from '../components/UsersOnline'
+import UsersOnline from '../components/UsersOnline';
 import SendInput from '../components/SendInput';
 import SendButton from '../components/SendButton';
 import Message from '../components/Message';
 import GlobalStyled from '../globalStyled';
-import * as S from './styled'
+import * as S from './styled';
 import { 
   Chat, 
   Send, 
@@ -15,7 +15,18 @@ import {
   Button 
 } from '../components/styled';
 
+const initialState = {
+  usersOnline: 0,
+  users: [],
+  username: '', 
+  hasUsername: false,
+  value: '',
+  messages: []
+};
+
 export default class Main extends Component {
+  state = { ...initialState };
+  
   render() {
     return (
       <S.Main>
