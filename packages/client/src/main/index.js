@@ -4,14 +4,29 @@ import SendInput from '../components/SendInput';
 import SendButton from '../components/SendButton';
 import Message from '../components/Message';
 import GlobalStyled from '../globalStyled';
-import { Chat, Send } from '../components/styled';
 import * as S from './styled'
+import { 
+  Chat, 
+  Send, 
+  Title, 
+  EnterUsername, 
+  Box, 
+  Input, 
+  Button 
+} from '../components/styled';
 
 export default class Main extends Component {
   render() {
     return (
       <S.Main>
         <GlobalStyled />
+        <EnterUsername username={hasUsername}>
+          <Box>
+            <Title color={'#4286F5'}>Enter with your username</Title>
+            <Input onChange={this.handleChangeUser} onKeyPress={this.keyPressedUser} autoFocus/>
+            <Button onClick={this.getUsername}>Join</Button>
+          </Box>
+        </EnterUsername>
         <UsersOnline />
         <Chat>
           <Message user="Maurício" me={true} txt="Que bom, fico feliz em ver vocês bem!"/>
