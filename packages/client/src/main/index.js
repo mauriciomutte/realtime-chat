@@ -87,10 +87,13 @@ export default class Main extends Component {
         </EnterUsername>
         <UsersOnline users={usersOnline}/>
         <Chat>
-          <Message user="Maurício" me={true} txt="Que bom, fico feliz em ver vocês bem!"/>
-          <Message user="Maithê" me={false} txt="Olá, Maurício! Tudo bem e com você?"/>
-          <Message user="Pitoco" me={false} txt="Au au au!"/>
-          <Message user="Maurício" me={true} txt="Olá pessoal! Como vocês estão?"/>
+          {messages.map(message => (
+            <Message 
+              user={message.username} 
+              txt={message.txt} 
+              me={message.username === username ? true : false}
+            />
+          ))}
         </Chat>
         <Send>
           <SendInput value={value} handleChange={this.handleChangeSend} onKeyPress={this.keyPressedSend}/>
