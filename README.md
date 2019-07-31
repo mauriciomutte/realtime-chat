@@ -4,7 +4,7 @@
 <p align="center">
   <a href="https://github.com/mauriciomutte/realtime-chat/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/mauriciomutte/realtime-chat"></a>
   <a href="https://github.com/mauriciomutte/realtime-chat/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/mauriciomutte/realtime-chat"></a>
-  <a href="https://twitter.com/mauriciomutte"><img alt="Twitter" src="https://img.shields.io/twitter/url/https/github.com/mauriciomutte/realtime-chat?style=social"></a>
+  <a href="https://twitter.com/mauriciomutte/status/1156694145370640384"><img alt="Twitter" src="https://img.shields.io/twitter/url/https/github.com/mauriciomutte/realtime-chat?style=social"></a>
 </p>
 
 
