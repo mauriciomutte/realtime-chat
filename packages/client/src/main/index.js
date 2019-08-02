@@ -74,6 +74,7 @@ export default class Main extends Component {
     this.state.messages.unshift({
       username: this.state.username,
       txt: this.state.value,
+      date: new Date(),
     });
 
     socket.emit('messages', this.state.messages);
