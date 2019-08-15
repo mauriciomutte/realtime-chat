@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const UsersOnline = styled.div`
   background-color: #4286F5;
-  color: #fff;
-  padding: 1em 0;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 10px 0;
   text-align: center;
+
+  button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
 `;
 
 export const Chat = styled.div`
