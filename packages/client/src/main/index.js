@@ -12,7 +12,8 @@ import {
   Box,
   Input,
   Button,
-  UsersOnline
+  UsersOnline,
+  UsersList
 } from '../components/styled';
 
 import socketIOClient from 'socket.io-client';
@@ -71,6 +72,19 @@ export default () => {
   return (
     <S.Main>
       <GlobalStyled />
+      <UsersList
+        show={showUsersList}
+        onClick={() => setShowUsersList(false)}
+      >
+        <div>
+          <h2>{usersOnline} Users Online</h2>
+          <ul>
+            {users.map(users => (
+              <li>{users.username}</li>
+            ))}
+          </ul>
+        </div>
+      </UsersList>
       <EnterUsername username={hasUsername}>
         <Box>
           <Title color={'#4286F5'}>Enter with your username</Title>
