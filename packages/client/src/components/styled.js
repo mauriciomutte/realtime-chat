@@ -2,11 +2,18 @@ import styled from 'styled-components';
 
 export const UsersOnline = styled.div`
   background-color: #4286F5;
-  color: #fff;
-  padding: 1em 0;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 10px 0;
   text-align: center;
+
+  button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
 `;
 
 export const Chat = styled.div`
@@ -123,5 +130,40 @@ export const Button = styled.button`
   padding: 3px 35px;
 
   :hover {
+  }
+`;
+
+export const UsersList = styled.div`
+  align-items: center;
+  display: ${props => props.show ? 'flex' : 'none'};;
+  justify-content: center;
+  background-color: #0009;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  div {
+    background-color: #EBEFF2;
+    border-radius: 5px;
+    padding: 1em 2em 2em 2em;
+    list-style: none;
+    width: 300px;
+    height: 400px;
+  }
+
+  h2 {
+    margin-bottom: 1em; 
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    overflow-x: scroll;
+
+    li {
+      font-size: 18px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
   }
 `;

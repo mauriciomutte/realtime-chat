@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import UsersOnline from '../components/UsersOnline';
 import SendInput from '../components/SendInput';
 import SendButton from '../components/SendButton';
 import Message from '../components/Message';
@@ -12,7 +11,9 @@ import {
   EnterUsername,
   Box,
   Input,
-  Button
+  Button,
+  UsersOnline,
+  UsersList
 } from '../components/styled';
 
 import socketIOClient from 'socket.io-client';
@@ -23,6 +24,7 @@ export default () => {
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
   const [hasUsername, setHasUsername] = useState(false);
+  const [showUsersList, setShowUsersList] = useState(false);
   const [value, setValue] = useState('');
   const [messages, setMessages] = useState([]);
 
@@ -70,6 +72,19 @@ export default () => {
   return (
     <S.Main>
       <GlobalStyled />
+      <UsersList
+        show={showUsersList}
+        onClick={() => setShowUsersList(false)}
+      >
+        <div>
+          <h2>{usersOnline} Users Online</h2>
+          <ul>
+            {users.map(users => (
+              <li>{users.username}</li>
+            ))}
+          </ul>
+        </div>
+      </UsersList>
       <EnterUsername username={hasUsername}>
         <Box>
           <Title color={'#4286F5'}>Enter with your username</Title>
@@ -77,7 +92,9 @@ export default () => {
           <Button onClick={getUsername}>Join</Button>
         </Box>
       </EnterUsername>
-      <UsersOnline users={usersOnline} />
+      <UsersOnline>
+        <button onClick={() => setShowUsersList(true)}>{usersOnline} Users online</button>
+      </UsersOnline>
       <Chat>
         {messages.map(message => (
           <Message
