@@ -5,9 +5,9 @@ import socketIOClient from 'socket.io-client';
 import GlobalStyled from './globalStyled';
 import SendInput from './components/SendInput';
 import SendButton from './components/SendButton';
+import Chat from './components/Chat';
 import Message from './components/Message';
 import {
-  Chat,
   Send,
   Title,
   EnterUsername,
