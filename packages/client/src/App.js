@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import socketIOClient from 'socket.io-client';
 
 import GlobalStyled from './globalStyled';
-import SendInput from './components/SendInput';
-import SendButton from './components/SendButton';
+import Send from './components/Send';
 import Chat from './components/Chat';
 import Message from './components/Message';
 import {
-  Send,
   Title,
   EnterUsername,
   Box,
@@ -111,10 +109,12 @@ export default () => {
           />
         ))}
       </Chat>
-      <Send>
-        <SendInput value={value} handleChange={handleChangeSend} onKeyPress={keyPressedSend} />
-        <SendButton click={sendMsg} />
-      </Send>
+      <Send 
+        value={value}
+        onChange={handleChangeSend}
+        onKeyPress={keyPressedSend}
+        send={sendMsg}
+      />
     </Main>
   );
 }
