@@ -8,11 +8,6 @@ import Chat from './components/Chat';
 import Message from './components/Message';
 import NewUser from './components/NewUser';
 
-import {
-  UsersOnline,
-  UsersList
-} from './components/styled';
-
 const socket = socketIOClient('http://localhost:4000');
 
 export const Main = styled.main`
@@ -21,12 +16,23 @@ export const Main = styled.main`
   flex-direction: column;
 `;
 
+export const UsersOnline = styled.div`
+  background-color: #4286F5;
+  padding: 1em 0;
+  text-align: center;
+
+  span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+`;
+
 export default () => {
   const [usersOnline, setUsersOnline] = useState(0);
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
   const [hasUsername, setHasUsername] = useState(false);
-  const [showUsersList, setShowUsersList] = useState(false);
   const [value, setValue] = useState('');
   const [messages, setMessages] = useState([]);
 
@@ -74,19 +80,6 @@ export default () => {
   return (
     <Main>
       <GlobalStyled />
-      <UsersList
-        show={showUsersList}
-        onClick={() => setShowUsersList(false)}
-      >
-        <div>
-          <h2>{usersOnline} Users Online</h2>
-          <ul>
-            {users.map(users => (
-              <li>{users.username}</li>
-            ))}
-          </ul>
-        </div>
-      </UsersList>
       <NewUser
         username={hasUsername}
         onChange={handleChangeUser}
@@ -94,7 +87,7 @@ export default () => {
         onClick={getUsername}
       />
       <UsersOnline>
-        <button onClick={() => setShowUsersList(true)}>{usersOnline} Users online</button>
+        <span>{usersOnline} Users online</span>
       </UsersOnline>
       <Chat>
         {messages.map(message => (
