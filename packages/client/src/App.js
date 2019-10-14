@@ -6,12 +6,9 @@ import GlobalStyled from './globalStyled';
 import Send from './components/Send';
 import Chat from './components/Chat';
 import Message from './components/Message';
+import NewUser from './components/NewUser';
+
 import {
-  Title,
-  EnterUsername,
-  Box,
-  Input,
-  Button,
   UsersOnline,
   UsersList
 } from './components/styled';
@@ -90,13 +87,12 @@ export default () => {
           </ul>
         </div>
       </UsersList>
-      <EnterUsername username={hasUsername}>
-        <Box>
-          <Title color={'#4286F5'}>Enter with your username</Title>
-          <Input onChange={handleChangeUser} onKeyPress={keyPressedUser} autoFocus />
-          <Button onClick={getUsername}>Join</Button>
-        </Box>
-      </EnterUsername>
+      <NewUser
+        username={hasUsername}
+        onChange={handleChangeUser}
+        onKeyPress={keyPressedUser}
+        onClick={getUsername}
+      />
       <UsersOnline>
         <button onClick={() => setShowUsersList(true)}>{usersOnline} Users online</button>
       </UsersOnline>
