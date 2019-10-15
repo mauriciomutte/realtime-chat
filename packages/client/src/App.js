@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import socketIOClient from 'socket.io-client';
 
 import GlobalStyled from './globalStyled';
+import Header from './components/Header';
 import Send from './components/Send';
 import Chat from './components/Chat';
 import Message from './components/Message';
@@ -14,18 +15,6 @@ export const Main = styled.main`
   height: 100vh;
   display: flex;
   flex-direction: column;
-`;
-
-export const UsersOnline = styled.div`
-  background-color: #4286F5;
-  padding: 1em 0;
-  text-align: center;
-
-  span {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-  }
 `;
 
 export default () => {
@@ -86,9 +75,7 @@ export default () => {
         onKeyPress={keyPressedUser}
         onClick={getUsername}
       />
-      <UsersOnline>
-        <span>{usersOnline} Users online</span>
-      </UsersOnline>
+      <Header users={usersOnline} />
       <Chat>
         {messages.map(message => (
           <Message
