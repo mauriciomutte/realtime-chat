@@ -46,12 +46,14 @@ export default () => {
   }
 
   function getUsername() {
-    users.unshift({
-      username: username
-    });
-
-    socket.emit('users', users);
-    setHasUsername(true);
+    if (username) {
+      users.unshift({
+        username: username
+      });
+  
+      socket.emit('users', users);
+      setHasUsername(true);
+    }
   }
 
   function sendMsg() {
