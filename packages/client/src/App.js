@@ -55,15 +55,17 @@ export default () => {
   }
 
   function sendMsg() {
-    messages.unshift({
-      username: username,
-      txt: value,
-      date: new Date(),
-    });
-
-    socket.emit('messages', messages);
-
-    setValue('');
+    if (value) {
+      messages.unshift({
+        username,
+        txt: value,
+        date: new Date(),
+      });
+  
+      socket.emit('messages', messages);
+  
+      setValue('');
+    }
   }
 
   return (
