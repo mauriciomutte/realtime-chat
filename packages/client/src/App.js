@@ -48,7 +48,7 @@ export default () => {
   function getUsername() {
     if (username) {
       users.unshift({
-        username: username
+        username,
       });
   
       socket.emit('users', users);
