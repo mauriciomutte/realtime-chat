@@ -15,6 +15,6 @@
     "start:server": "yarn workspace server start"
   },
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "lerna": "^3.19.0"
   }
 }
