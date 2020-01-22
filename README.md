@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a align="center" href="https://client.mauriciomutte.now.sh/">View demo</a>
+  <a align="center" href="https://chat.mauriciomutte.now.sh/">View demo</a>
 </p>
 
 # Getting started
